@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /*
+      Thanks Cuneyt Celebican (2406 fall 2017) for the @media style sheet
+    */
+      body {
+        font-family: sans-serif;
+        font-size: 1.4em;
+        padding: 15px;
+        margin: 0px;
+      }
+      div#messages>div {
+        background: #e8e8e8;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border-bottom: 1px solid #fafafa;
+      }
+      div#messages>div:first-child {
+        background: #fff;
+        margin-bottom: 20px;
+        padding: 0px;
+      }
+      div#messages>div:last-child {
+        margin-bottom: 20px;
+      }
+      div#messages>div:nth-child(even) {
+        margin-left: 60px;
+      }
+      div#messages>div:nth-child(odd) {
+        margin-right: 60px;
+      }
+      input#msgBox {
+        width: -webkit-calc(100% - 24px);
+        width: -moz-calc(100% - 24px);
+        width: calc(100% - 24px);
+        display: block;
+        padding: 10px;
+      }
+      input[type="button"] {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        background: #0a86e6;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 10px 5px;
+      }
+      .user_message {
+        color: blue
+      }
+      .alternate_message {
+        color: black
+      }
+      .private_message {
+        color: red
+      }
+  </style>
+</head>
+<body>
+  <div id='messages'></div>
+  <div id='connect'></div>
+
+  <input type='text' placeholder='Send a message' id='msgBox'>
+  <input type='button' id="send_button" value='SEND'>
+  <div>
+    <input type='text' placeholder='Please enter your name' id='userBox'>
+    <input type='button' id="establish_connection_button" value='connect'>
+    <input type='button' id="clear_button" value='CLEAR'>
+
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src='chatClient.js'></script>
+  <script src='eventListeners.js'></script>
+  <script src='buttonAndKey.js'></script>
+
+</body>
+</html>
